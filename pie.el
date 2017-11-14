@@ -85,6 +85,12 @@ Version 2017-11-01"
 ;; files end with newlines
 (setq require-final-newline t)
 
+;; what happens when scrolling
+(setq track-eol t)
+(setq line-move-visual nil)
+(setq scroll-preserve-screen-position t)
+(setq scroll-conservatively 101)
+
 ;;;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

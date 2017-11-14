@@ -159,6 +159,12 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (advice-add #'backward-page :after #'recenter)
 (advice-add #'forward-page :after #'recenter)
 
+;; special navigation
+(use-package avy)
+(define-key pie-mode-map (kbd "C-p") #'avy-goto-word-1)
+(define-key pie-mode-map (kbd "M-p") #'avy-goto-char)
+(define-key pie-mode-map (kbd "C-M-p") #'avy-pop-mark)
+
 ;; typical buffer
 (define-key pie-mode-map (kbd "C-f") #'switch-to-buffer)
 (define-key pie-mode-map (kbd "M-f") #'find-file)

@@ -82,6 +82,9 @@ Version 2017-11-01"
   (global-undo-tree-mode 1)
   :diminish undo-tree-mode)
 
+;; files end with newlines
+(setq require-final-newline t)
+
 ;;;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

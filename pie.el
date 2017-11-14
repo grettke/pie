@@ -212,6 +212,22 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (setq ido-use-url-at-point t)
 (setq ido-use-filename-at-point 'guess)
 
+;; intellisense
+(use-package fuzzy
+  :ensure t)
+(use-package auto-complete
+  :ensure t
+  :config
+  (use-package auto-complete-config)
+  (setq ac-quick-help-prefer-pos-tip nil)
+  (ac-config-default)
+  (setq ac-auto-start nil)
+  (ac-set-trigger-key "TAB")
+  :diminish auto-complete-mode)
+(use-package auto-complete-chunk
+  :ensure t)
+(use-package auto-complete-chunk)
+
 ;;;###autoload
 (define-minor-mode pie-mode
   "A minor mode so that my key settings override annoying major modes."

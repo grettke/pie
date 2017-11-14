@@ -129,6 +129,14 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq imenu-list-position 'left)
   (setq imenu-list-size 40))
 
+;; macros
+(setq kmacro-ring-max 32)
+(use-package elmacro
+  :ensure t
+  :diminish (elmacro-mode)
+  :config
+  (elmacro-mode))
+
 ;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

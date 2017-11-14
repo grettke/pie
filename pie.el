@@ -171,6 +171,32 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (define-key pie-mode-map (kbd "M-z") #'undo-tree-visualize)
 (define-key pie-mode-map (kbd "C-M-M") #'imenu-list)
 
+;; interactively do things
+(use-package ido)
+(use-package flx-ido
+  :ensure t
+  :config
+  (ido-mode t))
+(use-package ido-hacks
+  :ensure t)
+(use-package ido-completing-read+
+  :config
+  (ido-ubiquitous-mode t)
+  (setq ido-create-new-buffer 'always)
+  (flx-ido-mode t)
+  (setq ido-use-faces nil))
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  (ido-vertical-mode t)
+  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+(use-package smex
+  :ensure t
+  :config
+  (smex-initialize))
+(setq ido-use-url-at-point t)
+(setq ido-use-filename-at-point 'guess)
+
 ;;;###autoload
 (define-minor-mode pie-mode
   "A minor mode so that my key settings override annoying major modes."

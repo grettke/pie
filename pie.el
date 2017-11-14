@@ -53,6 +53,9 @@ Version 2017-11-01"
 ;; fast answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; echo keystrokes immediately.
+(setq echo-keystrokes 0.02)
+
 ;;;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

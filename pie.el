@@ -110,6 +110,9 @@ Version 2017-11-01"
 (define-key pie-mode-map (kbd "C-M-j") #'beginning-of-line)
 (define-key pie-mode-map (kbd "C-M-l") #'end-of-line)
 
+(advice-add #'backward-page :after #'recenter)
+(advice-add #'forward-page :after #'recenter)
+
 ;; typical buffer
 (define-key pie-mode-map (kbd "C-f") #'switch-to-buffer)
 (define-key pie-mode-map (kbd "M-f") #'find-file)

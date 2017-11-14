@@ -28,3 +28,6 @@
 
 ;; no scratch
 (kill-buffer "*scratch*")
+
+;; default major mode Markdown
+(setq initial-major-mode 'markdown-mode)

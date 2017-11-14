@@ -66,6 +66,11 @@ Version 2017-11-01"
 ;; nice modile
 (use-package smart-mode-line)
 
+;;; columns
+(defconst help/column-width 78)
+(setq-default fill-column help/column-width)
+(setq colon-double-space nil)
+
 ;;;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

@@ -101,7 +101,7 @@ Version 2017-11-01"
 (define-key pie-mode-map (kbd "C-M-l") #'end-of-line)
 
 ;; typical buffer
-(define-key pie-mode-map (kbd "C-f") #'switch-buffer)
+(define-key pie-mode-map (kbd "C-f") #'switch-to-buffer)
 (define-key pie-mode-map (kbd "M-f") #'find-file)
 
 ;; typical command

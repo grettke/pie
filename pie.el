@@ -56,6 +56,16 @@ Version 2017-11-01"
 ;; echo keystrokes immediately.
 (setq echo-keystrokes 0.02)
 
+;;; modeline
+;; diminish lighters
+(use-package diminish)
+;; file size
+(size-indication-mode)
+;; column number
+(column-number-mode t)
+;; nice modile
+(use-package smart-mode-line)
+
 ;;;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

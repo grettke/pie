@@ -14,3 +14,6 @@
 (setq use-package-always-ensure t)
 
 ;;; user experience
+
+;; no Emacs startup screen
+(setq inhibit-startup-screen t)

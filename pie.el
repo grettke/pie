@@ -96,6 +96,8 @@ Version 2017-11-01"
 ;; can quit
 (define-key pie-mode-map (kbd "C-M-Q") #'save-buffers-kill-emacs)
 
+(use-package mwim)
+
 ;; typical navigation
 (define-key pie-mode-map (kbd "C-i") #'previous-line)
 (define-key pie-mode-map (kbd "C-k") #'next-line)
@@ -107,7 +109,7 @@ Version 2017-11-01"
 (define-key pie-mode-map (kbd "M-l") #'forward-word)
 (define-key pie-mode-map (kbd "C-M-i") #'beginning-of-buffer)
 (define-key pie-mode-map (kbd "C-M-k") #'end-of-buffer)
-(define-key pie-mode-map (kbd "C-M-j") #'beginning-of-line)
+(define-key pie-mode-map (kbd "C-M-j") #'mwim-beginning-of-code-or-line)
 (define-key pie-mode-map (kbd "C-M-l") #'end-of-line)
 
 (advice-add #'backward-page :after #'recenter)

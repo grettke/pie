@@ -1,5 +1,3 @@
-;;; package management
-
 ;; only stable packages
 (require 'package)
 (add-to-list 'package-archives
@@ -13,15 +11,11 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;;; markdown
-
 (use-package markdown-mode
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)))
-
-;;; user experience
 
 ;; no Emacs startup screen
 (setq inhibit-startup-screen t)
@@ -56,7 +50,7 @@ Version 2017-11-01"
 ;; echo keystrokes immediately.
 (setq echo-keystrokes 0.02)
 
-;;; modeline
+;; modeline
 ;; diminish lighters
 (use-package diminish)
 ;; file size
@@ -66,7 +60,7 @@ Version 2017-11-01"
 ;; nice modile
 (use-package smart-mode-line)
 
-;;; columns
+;; columns
 (defconst help/column-width 78)
 (setq-default fill-column help/column-width)
 (setq colon-double-space nil)
@@ -91,7 +85,7 @@ Version 2017-11-01"
 (setq scroll-preserve-screen-position t)
 (setq scroll-conservatively 101)
 
-;;;; pie keymap
+;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority
 ;; https://github.com/kaushalmodi/.emacs.d/blob/master/elisp/modi-mode.el

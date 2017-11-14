@@ -64,6 +64,9 @@ Version 2017-11-01"
 (defconst help/column-width 78)
 (setq-default fill-column help/column-width)
 (setq colon-double-space nil)
+(use-package fill-column-indicator
+  :config
+  (setq fci-rule-column 79))
 
 ;; buffers
 (desktop-save-mode t)

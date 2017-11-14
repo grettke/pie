@@ -13,6 +13,14 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;;; markdown
+
+(use-package markdown-mode
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)))
+
 ;;; user experience
 
 ;; no Emacs startup screen

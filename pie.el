@@ -71,6 +71,10 @@ Version 2017-11-01"
 (setq-default fill-column help/column-width)
 (setq colon-double-space nil)
 
+;; buffers
+(desktop-save-mode t)
+(setq desktop-restore-eager 10)
+
 ;;;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

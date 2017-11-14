@@ -50,6 +50,9 @@ Version 2017-11-01"
     ))
 (setq initial-buffer-choice 'xah-new-empty-buffer)
 
+;; fast answers
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;;;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

@@ -88,6 +88,29 @@ Version 2017-11-01"
 (setq scroll-preserve-screen-position t)
 (setq scroll-conservatively 101)
 
+;; file based system
+(setq auto-save-default t)
+(setq make-backup-files nil)
+(setq auto-save-visited-file-name t)
+(setq auto-save-interval 0)
+(setq auto-save-timeout (* 60 5))
+(global-auto-revert-mode 1)
+(diminish 'auto-revert-mode)
+(defun help/create-non-existent-directory ()
+  "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
+  (let ((parent-directory (file-name-directory buffer-file-name)))
+    (when (and (not (file-exists-p parent-directory))
+             (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
+      (make-directory parent-directory t))))
+(add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
+(setq large-file-warning-threshold (* 1024 1024 2))
+(setq temporary-file-directory "/tmp")
+(use-package hardhat
+  :ensure t
+  :diminish global-hardhat-mode
+  :config
+  (global-hardhat-mode 1))
+
 ;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority

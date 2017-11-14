@@ -146,7 +146,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   "Keymap for `pie-mode'.")
 
 ;; can quit
-(define-key pie-mode-map (kbd "C-M-Q") #'save-buffers-kill-emacs)
+(define-key pie-mode-map (kbd "C-M-q") #'save-buffers-kill-emacs)
 
 (use-package mwim)
 

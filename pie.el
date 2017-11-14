@@ -25,3 +25,6 @@
 
 ;; no Emacs startup screen
 (setq inhibit-startup-screen t)
+
+;; no scratch
+(kill-buffer "*scratch*")

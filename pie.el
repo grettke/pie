@@ -75,6 +75,13 @@ Version 2017-11-01"
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
 
+;; sane undo
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode 1)
+  :diminish undo-tree-mode)
+
 ;;;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority
@@ -106,6 +113,9 @@ Version 2017-11-01"
 
 ;; typical command
 (define-key pie-mode-map (kbd "C-g") #'execute-extended-command)
+
+;; utilities
+(define-key pie-mode-map (kbd "M-z") #'undo-tree-visualize)
 
 ;;;###autoload
 (define-minor-mode pie-mode

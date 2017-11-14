@@ -174,9 +174,10 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (define-key pie-mode-map (kbd "C-M-p") #'avy-pop-mark)
 
 ;; typical buffer
-(define-key pie-mode-map (kbd "C-f") #'switch-to-buffer)
-(define-key pie-mode-map (kbd "M-f") #'find-file)
-(define-key pie-mode-map (kbd "C-M-f") #'ibuffer)
+(define-key pie-mode-map (kbd "C-f") #'ido-switch-buffer)
+(define-key pie-mode-map (kbd "M-f") #'ido-find-file)
+(define-key pie-mode-map (kbd "C-M-f") #'ido-kill-buffer)
+(define-key pie-mode-map (kbd "C-M-r") #'ibuffer)
 
 ;; typical command
 (define-key pie-mode-map (kbd "C-g") #'execute-extended-command)

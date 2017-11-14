@@ -111,6 +111,24 @@ Version 2017-11-01"
   :config
   (global-hardhat-mode 1))
 
+;; menuing
+(use-package imenu
+  :config
+  (setq imenu-sort-function #'imenu--sort-by-name))
+(defun help/try-to-add-imenu ()
+  "Add Imenu to modes that have `font-lock-mode' activated.
+
+Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
+  (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
+(add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
+(use-package imenu-list
+  :ensure t
+  :config
+  (setq imenu-list-focus-after-activation t)
+  (setq imenu-list-auto-resize t)
+  (setq imenu-list-position 'left)
+  (setq imenu-list-size 40))
+
 ;; pie keymap
 
 ;; Main use is to have my key bindings have the highest priority
@@ -151,6 +169,7 @@ Version 2017-11-01"
 
 ;; utilities
 (define-key pie-mode-map (kbd "M-z") #'undo-tree-visualize)
+(define-key pie-mode-map (kbd "C-M-M") #'imenu-list)
 
 ;;;###autoload
 (define-minor-mode pie-mode
